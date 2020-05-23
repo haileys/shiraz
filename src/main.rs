@@ -17,7 +17,7 @@ fn main() {
 
     unsafe {
         let argv0 = CString::new(env::args_os().nth(0).unwrap().as_bytes()).unwrap();
-        let argv = [argv0.as_ptr()];
+        let argv = [argv0.as_ptr(), argv0.as_ptr()];
 
         let mut error = [0 as c_char; 128];
 
